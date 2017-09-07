@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9573849f-98c2-4150-a004-9da9b8ce5d9c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Neural Network_Python+R/lesson18696_1.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Neural Network_Python+R/lesson18696_2.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,7 +25,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lesson18696_1.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lesson18696_1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Neural Network_Python+R/lesson18696_1.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
@@ -33,6 +33,16 @@
               <folding>
                 <element signature="e#400#434#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lesson18696_2.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Neural Network_Python+R/lesson18696_2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -78,11 +88,12 @@
         <option value="$PROJECT_DIR$/Neural Network_Python+R/lesson16462_3.py" />
         <option value="$PROJECT_DIR$/Neural Network_Python+R/lesson16462_2.py" />
         <option value="$PROJECT_DIR$/Neural Network_Python+R/lesson18696_1.py" />
+        <option value="$PROJECT_DIR$/Neural Network_Python+R/lesson18696_2.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1097" />
+    <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -171,7 +182,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.lesson18696_1">
+  <component name="RunManager" selected="Python.lesson18696_2">
     <configuration default="false" name="lesson16462_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -203,6 +214,24 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Courses" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Neural Network_Python+R/lesson18696_1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="lesson18696_2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\Programs\Python\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Neural Network_Python+R" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Courses" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Neural Network_Python+R/lesson18696_2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -289,14 +318,16 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.lesson16462_1" />
       <item index="1" class="java.lang.String" itemvalue="Python.lesson18696_1" />
+      <item index="2" class="java.lang.String" itemvalue="Python.lesson18696_2" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.lesson18696_1" />
-        <item index="1" class="java.lang.String" itemvalue="Python.lesson16462_1" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Python.lesson18696_2" />
+        <item index="1" class="java.lang.String" itemvalue="Python.lesson18696_1" />
+        <item index="2" class="java.lang.String" itemvalue="Python.lesson16462_1" />
       </list>
     </recent_temporary>
   </component>
@@ -314,7 +345,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1097" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2549234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -379,6 +410,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Neural Network_Python+R/lesson16462_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="5" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Neural Network_Python+R/lesson16462_3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -389,14 +428,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Neural Network_Python+R/lesson16462_2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="5" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Neural Network_Python+R/lesson18696_1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -404,6 +435,14 @@
           <folding>
             <element signature="e#400#434#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Neural Network_Python+R/lesson18696_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
