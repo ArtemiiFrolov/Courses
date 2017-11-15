@@ -1,0 +1,98 @@
+\documentclass[11pt]{article}
+
+% ------------------------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% ------------------------------------------------------------------------------
+
+\usepackage[margin=.8in,top=1.1in,bottom=1.1in]{geometry} % page layout
+\usepackage{amsmath,amsthm,amssymb,amsfonts} % math things
+\usepackage{graphicx} % include graphics
+\usepackage{fancyhdr} % header customization
+\usepackage{titlesec} % help with section naming
+
+% naming sections
+\titleformat{\section}{\bf}{Problem \thesection}{0.5em}{}
+\newcommand{\exercise}{\section{}}
+
+% headers
+\pagestyle{fancy} 
+\fancyhf{} % clear all
+\fancyhead[L]{\sffamily\small Machine Learning 1 --- Homework}
+\fancyhead[R]{\sffamily\small Page \thepage}
+\renewcommand{\headrulewidth}{0.2pt}
+\renewcommand{\footrulewidth}{0.2pt}
+\markright{\hrulefill\quad}
+
+\newcommand{\hwhead}[4]{
+\begin{center}
+\sffamily\large\bfseries Machine Learning Worksheet #1
+\vspace{2mm} 
+\normalfont
+
+#2 -- #3 -- \texttt{#4}
+\end{center}
+\vspace{6mm} \hrule \vspace{4mm}
+}
+
+% ------------------------------------------------------------------------------
+% Start here -- Fill in your name, imat and email
+% ------------------------------------------------------------------------------
+
+\newcommand{\name}{Artemii Frolov} %
+\newcommand{\imat}{03681119} %
+\newcommand{\email}{ga83cag@mytum.de} %
+
+\begin{document}
+
+% ------------------------------------------------------------------------------
+% Change xx (and only xx) to the current sheet number
+% ------------------------------------------------------------------------------
+\hwhead{xx}{\name}{\imat}{\email}
+
+% ------------------------------------------------------------------------------
+% Fill in your solutions
+% ------------------------------------------------------------------------------
+
+\exercise % each new exercise begins with this command
+$$\frac{d\theta^t(1-\theta)^h}{d\theta}=t\theta ^{t-1}(1-\theta)^h - h\theta^t(1-\theta)^{h-1}$$
+$$\frac{d^2\theta^t(1-\theta)^h}{d\theta^2}=t((t-1)\theta ^{t-2}(1-\theta)^h - h\theta^{t-1}(1-\theta)^{h-1})-h(t\theta ^{t-1}(1-\theta)^{h-1} - (h-1)\theta^{t}(1-\theta)^{h-2})$$
+$$\frac{d \ln{\theta^t(1-\theta)^h}}{d \ln{\theta}}=\frac{t}{\theta}-\frac{h}{1-\theta}$$
+$$\frac{d^2 \ln{\theta^t(1-\theta)^h}}{d \ln{\theta^2}}=\frac{t}{\theta^2}+\frac{h}{(1-\theta)^2}$$
+
+\exercise
+Let's assume f(x) - a function of x. Then, f(x*) is maximum of function, where x* is a solution of f'(x)=0. Extremum of function ln(f(x)) is ln(f(x**)), where x** is a solution of $\frac{d\ln{f(x**)}}{dx**}=0$\newline
+$\frac{d\ln{f(x)}}{dx}=\frac{f'(x)}{f(x)}=0$ Then, $\frac{d\ln{f(x**)}}{dx**}=0$ is only when f'(x)=0, so x** (extremum of ln(f(x**) )is equal x* (maximum of f(x*)).\newline
+Given f(x*)$>$=f(x), and ln - monotonically increasing function, then ln(f(x*)) $>$= ln(f(x)). Given x* = x**,  ln(f(x**)) $>$= ln(f(x)), so the x** is argument of maximum of function ln(f(x)) and also f(x).\newline
+\newline
+So, if derivative of ln is counting easier, then derivative of function itself, we can count derivative of ln and get the same result.
+
+\exercise
+To find $\theta_{MAP}$, we need to find solution of this equation:
+$$\frac{d \frac{p(D\mid\theta_{MAP})*p(\theta_{MAP})}{p(D)}}{d\theta_{MAP}}=0$$
+Then, we can ln this equation, and get:
+$$\frac{\ln{p(D\mid\theta_{MAP})}+\ln{p(\theta_{MAP})}-\ln{p(D)}}{d\theta_{MAP}}=0$$
+Then we have
+$$\frac{p'(D\mid\theta_{MAP})}{p(D\mid\theta_{MAP})}+\frac{p'(\theta_{MAP})}{p(\theta_{MAP})}=0$$
+If $p'(\theta_{MAP})=0$, then $p'(D\mid\theta_{MAP})$ must be equal 0, that makes $\theta_{MAP}=\theta_{MLE}$.\newline
+So, $p'(\theta)$ must be equal 0, that means $p(\theta)$ is constant value.
+
+\exercise
+$E[p(\theta|x)]=\frac{\alpha+m}{\alpha+m+l+\beta}$ (given a table of means), $\theta_{MLE}=\frac{m}{m+l}$, $E[p(\theta)]=\frac{\alpha}{\alpha+\beta}$(given a table of means), so: \newline
+$\dfrac{\alpha+m}{\alpha+m+l+\beta}=\dfrac{\alpha+\beta}{\alpha+m+l+\beta}\cdot\dfrac{\alpha}{\alpha+\beta}+\dfrac{m+l}{\alpha+m+l+\beta}\cdot\dfrac{m}{m+l}$\newline\newline
+If $\lambda=\dfrac{m+l}{\alpha+m+l+\beta}$, then $\dfrac{\alpha+m}{\alpha+m+l+\beta}=(1-\lambda)\dfrac{\alpha}{\alpha+\beta}+\lambda\dfrac{m}{m+l}$\newline
+\newline
+This means, that $E[p(\theta|x)]$ is between $\theta_{MLE}$ and $E[p(\theta)]$
+
+\exercise
+$$p(n) = \frac{\lambda^n}{n!}e^{-\lambda} $$
+$\lambda_{MLE}$ is a solution of $\frac{d\frac{\lambda^n}{n!}e^{-\lambda}}{d\lambda}=0$. Let's take ln again: 
+$$\frac{d\frac{\lambda^n}{n!}e^{-\lambda}}{d\lambda}=\frac{\ln{\lambda^n}+\ln{e^{-\lambda}}-\ln{n!}}{d\lambda}=0$$
+$$\frac{n}{\lambda}-1=0$$
+$$\lambda_{MLE}=n$$
+$\lambda_{MAP}$ is a solution of $\frac{d\frac{\lambda^n}{n!}e^{-\lambda}*\Gamma(\alpha,\beta)}{d\lambda}=0$. Let's take ln again: 
+$$\frac{d\frac{\lambda^n}{n!}e^{-\lambda}*\Gamma(\alpha,\beta)}{d\lambda}=\frac{\ln{\lambda^n}+\ln{e^{-\lambda}}-\ln{n!}-\ln{\Gamma(\alpha)}+\ln{b^a}+\ln{\lambda^{\alpha-1}}+\ln{e^{-\beta\lambda}}}{d\lambda}=0$$
+$$\frac{n}{\lambda}-1+\frac{\alpha-1}{\lambda}-\beta=0$$
+$$\lambda_{MAP}=\frac{n+\alpha-1}{\beta+1}$$
+
+\end{document}
