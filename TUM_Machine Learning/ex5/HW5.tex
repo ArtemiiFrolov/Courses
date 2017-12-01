@@ -1,0 +1,101 @@
+\documentclass[11pt]{article}
+
+% ------------------------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% ------------------------------------------------------------------------------
+
+\usepackage[margin=.8in,top=1.1in,bottom=1.1in]{geometry} % page layout
+\usepackage{amsmath,amsthm,amssymb,amsfonts} % math things
+\usepackage{graphicx} % include graphics
+\usepackage{fancyhdr} % header customization
+\usepackage{titlesec} % help with section naming
+
+% naming sections
+\titleformat{\section}{\bf}{Problem \thesection}{0.5em}{}
+\newcommand{\exercise}{\section{}}
+
+% headers
+\pagestyle{fancy} 
+\fancyhf{} % clear all
+\fancyhead[L]{\sffamily\small Machine Learning 1 --- Homework}
+\fancyhead[R]{\sffamily\small Page \thepage}
+\renewcommand{\headrulewidth}{0.2pt}
+\renewcommand{\footrulewidth}{0.2pt}
+\markright{\hrulefill\quad}
+
+\newcommand{\hwhead}[4]{
+\begin{center}
+\sffamily\large\bfseries Machine Learning Worksheet #1
+\vspace{2mm} 
+\normalfont
+
+#2 -- #3 -- \texttt{#4}
+\end{center}
+\vspace{6mm} \hrule \vspace{4mm}
+}
+
+% ------------------------------------------------------------------------------
+% Start here -- Fill in your name, imat and email
+% ------------------------------------------------------------------------------
+
+\newcommand{\name}{Artemii Frolov} %
+\newcommand{\imat}{03681119} %
+\newcommand{\email}{ga83cag@mytum.de} %
+
+\begin{document}
+
+% ------------------------------------------------------------------------------
+% Change xx (and only xx) to the current sheet number
+% ------------------------------------------------------------------------------
+\hwhead{xx}{\name}{\imat}{\email}
+
+% ------------------------------------------------------------------------------
+% Fill in your solutions
+% ------------------------------------------------------------------------------
+
+\exercise % each new exercise begins with this command
+If $w^Tx_i+w_0>0$ for each $x_i$, then if we multiply each inequality by $\alpha_i>0, \sum_i \alpha_i=1 $ and sum all of them, then 
+$$\sum_i^N \alpha_i (w^Tx_i+w_0)>0$$
+$$\sum_i^N \alpha_i w^Tx_i+\sum_i^N \alpha_i w_0>0$$
+$$w^T\sum_i^N \alpha_i x_i+  w_0 \sum_i^N \alpha_i>0$$
+$$w^T\sum_i^N \alpha_i x_i+  w_0 >0$$
+That means that for each point $z_1$, that belongs $X$ and can be declared as $\sum_i^N \alpha_i x_i$ (as part of $coX$):
+$$w^Tz_1 +  w_0 >0$$
+If $w^Ty_i+w_0<0$ for each $y_i$, then if we multiply each inequality by $\beta_i>0, \sum_i \beta_i=1 $  and sum all of them, then 
+$$\sum_i^M \beta_i (w^Ty_i+w_0)<0$$
+$$\sum_i^M \beta_i w^Ty_i+\sum_i^M \beta_i w_0<0$$
+$$w^T\sum_i^M \beta_i y_i+  w_0 \sum_i^M \beta_i<0$$
+$$w^T\sum_i^M \beta_i y_i+  w_0 <0$$
+That means that for each point $z_2$, that belongs $Y$ and can be declared as $\sum_i^M \beta_i y_i$ (as part of $coY$):
+$$w^Tz_2 +  w_0 <0$$
+If convex hull of $X$ and $Y$ are intersect, there must be a point $z=z_1=z_2$ (that lies in both convex hulls). This means, that $w^Tz +  w_0 <0$ and $w^T z +  w_0 >0$ must be true at the same time. But, as we see, it can't be true for any $z, w, w_0$, so that means, that if two convex hulls of two data sets intersect, these two data sets can't be  linearly separated.
+\exercise
+If two data sets are linearly separated, it means that $p_{MAXlikelihood}=1$ for $x>0$ (given $w^Tx=0$ for decision boundary),  We know, that 
+$$p=\frac{1}{1+e^{-w^Tx}}=1$$
+$$1+e^{-w^Tx}=1$$
+$$e^{-w^Tx}=0$$
+$$w^T \rightarrow \infty$$
+We can prevent this by adding weights regularization to the loss function. That means, our algorithm still find the line, that splits all points perfectly, but posterior distribution won't be step-wise.
+
+\exercise
+If we look carefully at given data set, we can notice that all crosses are only when $x_1$ and $x_2$ have different sign, and circles, when $x_1$ and $x_2$ are the same sigh. Also, all of them are on circle with radius 1. Given that, the basis function will be:
+$$\phi(x_1,x_2) = (x_1*x_2, 1)$$
+Linear separator will be a line $x_1*x_2=0$
+
+\exercise
+From the task, we see, that for each point we have $bias$, $x_1$ and $x_2$. That means, that our decision boundary must be:
+$$w^Tx=0$$ where $b=w_0$, which means
+$$w_0*1+w_1*x_1+w_2*x_2=0$$
+We have points (1; 2; 0) and (1;0;5). So we have: 
+$$ \left\{
+\begin{aligned}
+w_0+2w_1&=0\\
+w_0+5w_2 & = 0.\\
+\end{aligned}
+\right. $$
+$$w_1=2.5w_2$$
+There can be a lot of different $w_1$ and $w_2$, but let's choose $w_1=5$ and $w_2=2$.
+So, $w_0$ must fulfill our equation, and must be $-10$.
+Then, $w^T$ with bias will be (-10; 5;2).
+\end{document}
