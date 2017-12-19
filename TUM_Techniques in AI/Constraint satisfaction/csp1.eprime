@@ -1,0 +1,41 @@
+language ESSENCE' 1.0
+letting   NBROFPRESENTS = 4
+find  mum, brother, grandma, grandpa, cousin, aunt, uncle, so: int(10, 7, 4, 12)
+
+such that
+	$2
+	mum+brother+grandma+grandpa+cousin+aunt+uncle+so<=52,
+	
+	$3
+	allDiff([mum, brother, so]),
+	
+	$4
+	allDiff([uncle,cousin]),
+	
+	$5
+	allDiff([grandma,grandpa]),
+	
+	$6
+	allDiff([uncle,mum]),
+	
+	$7
+	mum != 4,
+	brother != 4,
+	so != 4,
+	grandpa != 4,
+	
+	$8
+	cousin != 7,
+	
+	$9
+	atmost([mum, brother, grandma, grandpa, cousin, aunt, uncle, so], [1],[12]),
+	
+	$10
+	atmost([mum, brother, grandma, grandpa, cousin, aunt, uncle, so], [2],[10]),
+	
+	$11
+	atmost([mum, brother, grandma, grandpa, cousin, aunt, uncle, so], [4],[4]),
+	
+	$12
+	brother = 10
+	
