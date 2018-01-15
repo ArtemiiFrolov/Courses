@@ -1,0 +1,109 @@
+\documentclass[11pt]{article}
+
+% ------------------------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% ------------------------------------------------------------------------------
+
+\usepackage[margin=.8in,top=1.1in,bottom=1.1in]{geometry} % page layout
+\usepackage{amsmath,amsthm,amssymb,amsfonts} % math things
+\usepackage{graphicx} % include graphics
+\usepackage{fancyhdr} % header customization
+\usepackage{titlesec} % help with section naming
+
+% naming sections
+\titleformat{\section}{\bf}{Problem \thesection}{0.5em}{}
+\newcommand{\exercise}{\section{}}
+
+% headers
+\pagestyle{fancy} 
+\fancyhf{} % clear all
+\fancyhead[L]{\sffamily\small Machine Learning 1 --- Homework}
+\fancyhead[R]{\sffamily\small Page \thepage}
+\renewcommand{\headrulewidth}{0.2pt}
+\renewcommand{\footrulewidth}{0.2pt}
+\markright{\hrulefill\quad}
+
+\newcommand{\hwhead}[4]{
+\begin{center}
+\sffamily\large\bfseries Machine Learning Worksheet #1
+\vspace{2mm} 
+\normalfont
+
+#2 -- #3 -- \texttt{#4}
+\end{center}
+\vspace{6mm} \hrule \vspace{4mm}
+}
+
+% ------------------------------------------------------------------------------
+% Start here -- Fill in your name, imat and email
+% ------------------------------------------------------------------------------
+
+\newcommand{\name}{Artemii Frolov} %
+\newcommand{\imat}{03681119} %
+\newcommand{\email}{ga83cag@mytum.de} %
+
+\begin{document}
+
+% ------------------------------------------------------------------------------
+% Change xx (and only xx) to the current sheet number
+% ------------------------------------------------------------------------------
+\hwhead{xx}{\name}{\imat}{\email}
+
+% ------------------------------------------------------------------------------
+% Fill in your solutions
+% ------------------------------------------------------------------------------
+
+\exercise % each new exercise begins with this command
+If we have samples, that are not linear separable, we can apply nonlinear transformation $\phi$ (basis function) that maps samples to a space, where they are linearly separable.  we can use neural network to find parameters  of this basis function and form of basis function itself.
+
+\exercise
+Parameter under activation function for $\sigma$:
+$$\sum_1 w^{\sigma}_{kj}*\sigma(\sum_0 w_{ji}^{\sigma}x_i)+w_{k0}^{\sigma}  $$
+Let's assume $w_{ji}^{\sigma} =  2w_{ji}^{tanh}$, $w_{kj}^{\sigma} =  2 w_{kj}^{tanh}$, $w_{k0}^{\sigma} =  2 w_{ko}^{tanh} - \sum_1 w_{kj}$. We can do this, because all $w$ just coefficients, that depends from itself and they will be fit later.
+$$\sum_1 2w^{tanh}_{kj}*\sigma(\sum_0 2w_{ji}^{tanh}x_i)+w_{k0}^{tanh}-\sum_1 w_{kj}=  \sum_1 (w^{tanh}_{kj}(2\sigma(2\sum_0 w_{ji}^{tanh}x_i)-1)+w_{k0}^{tanh}$$
+As we can see (after replace $\sum_0 w_{ji}^{tanh}x_i$ as $l$:
+$$2\sigma(2l)-1 = \frac{2}{1+e^{-2l}}-\frac{1+e^{-2l}}{1+e^{-2l}} =\frac{1-e^{-2l}}{1+e^{-2l}}= \frac{e^{l}-e^{-l}}{e^{l}+e^{-l}} = tanh(l)$$
+$$\sum_1 (w^{tanh}_{kj}(2\sigma(2\sum_0 w_{ji}^{tanh}x_i)-1)+w_{k0}^{tanh}=\sum_1 w^{tanh}_{kj}tanh(\sum_0 w_{ji}^{tanh}x_i)+w_{k0}^{tanh}$$
+So, this is completely the same function but with different $w$.
+\exercise
+$$(\frac{e^x-e^{-x}}{e^x+e^{-x}})'= \frac{(e^x-e^{-x})'(e^x+e^{-x})-(e^x-e^{-x})(e^x+e^{-x})'}{(e^x+e^{-x})^2}=$$
+$$=\frac{(e^x+e^{-x})(e^x+e^{-x})-(e^x-e^{-x})(e^x-e^{-x})}{(e^x+e^{-x})^2} = 1- \frac{e^x-e^{-x}}{e^x+e^{-x}}*\frac{e^x-e^{-x}}{e^x+e^{-x}}=1-tanh^2(x)$$
+It is useful property, because when we are doing a backpropagation algorithm, and finding derivative of loss function, we can reduce functions.
+
+\exercise
+For (-1;1) we can use:
+$$-\sum_{i=1}^N(\frac{y_i+1}{2}log(\frac{f+1}{2})+\frac{1-y_i}{2}log(\frac{1-f}{2}))$$
+We can use tanh(x) function as good example of logistic function with range (-1;1) or, if we need exactly the same answers as before, we can use $\frac{e^x-1}{e^x+1}$
+
+\exercise
+$$\frac{dE(w)}{dw_j}=\frac{1}{m}\sum_{i=1}^m\frac{dl}{d\eta_i}*(-w_j)+\lambda \frac{w_j}{2 ||w||}$$
+where 
+\begin{equation*}
+\frac{dl}{d\eta_i} = 
+ \begin{cases}
+   y_i-wx_i &\text{if $|y_i-wx_i|<1$}\\
+   1 &\text{if $y_i-wx_i>1$}\\
+   -1 &\text{if $y_i-wx_i<-1$}\\
+ \end{cases}
+\end{equation*}
+
+
+
+\exercise
+I would stop training at the minimum error at validation set. Here it will be about 50 updates. It is good solution to avoid overfitting, because with every iteration of training set it will fit better an better only for training set, when we need "basic" solution. After finding number of updates using validation set for my each model,  I will use test set to find which model is the best.\newline
+But, if we have only one model and we know that all hyper-parameters are correct, I will choose 70 update as average of minimum error between test and validation sets (but AGAIN only in this particular situation)
+\exercise
+$$log\sum_{i=1}^Ne^{x_i}=log\sum_{i=1}^N(e^{x_i-a}*e^a)=log(e^a\sum_{i=1}^Ne^{x_i-a})=a+log\sum_{i=1}^Ne^{x_i-a}$$
+\exercise
+$$\frac{e^{x_i}}{\sum_{i=1}^Ne^{x_i}}=\frac{e^{x_i-a}*e^a}{\sum_{i=1}^N(e^{x_i-a}*e^a)}=\frac{e^{x_i-a}*e^a}{e^a\sum_{i=1}^Ne^{x_i-a}}=\frac{e^{x_i-a}}{\sum_{i=1}^Ne^{x_i-a}}$$
+\exercise
+$$-(y(log(\sigma(x))+(1-y)log(1-\sigma(x)))=-(y(log(1)-log(1+e^{-x}))+(1-y)(log(e^{-x})-log(1+e^{-x})))$$
+$$=-(-y*log(1+e^{-x})-(1-y)(x+log(1+e^{-x})))=y*log(1+e^{-x})+x-xy+log(1+e^{-x})-y*log(1+e^{-x})$$
+$$=x-xy+log(1+e^{-x})$$
+$max(x,0)-x*y+log(1+e^{-|x|})$ is the same for $x>0$:
+$$x-x*y+log(1+e^{-x})$$
+$max(x,0)-x*y+log(1+e^{-|x|})$ is the same for $x<0$:
+$$-x*y+log(1+e^{x})=-x*y+log(\frac{e^{-x}+1}{e^{-x}})=-x*y+log(1+e^{-x})-log(e^{-x})=x-x*y+log(1+e^{-x})$$
+
+\end{document}
