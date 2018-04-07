@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--City View Controller-->
+        <scene sceneID="fxX-PA-fKh">
+            <objects>
+                <viewController storyboardIdentifier="cityViewController" id="O1l-t7-R8U" customClass="CityViewController" customModule="City_Guide" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3D4-P2-sbt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bI3-p1-tre">
+                                <rect key="frame" x="0.0" y="20" width="375" height="267"/>
+                            </mapView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZr-rV-8Jn">
+                                <rect key="frame" x="0.0" y="247" width="375" height="40"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Yba-vd-yE5">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpX-KL-3qD">
+                                            <rect key="frame" x="16" y="5" width="224.5" height="30"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State, Country" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGj-23-0id">
+                                            <rect key="frame" x="248.5" y="9" width="110.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gGj-23-0id" firstAttribute="centerY" secondItem="EpX-KL-3qD" secondAttribute="centerY" id="1AM-iL-jk1"/>
+                                        <constraint firstItem="gGj-23-0id" firstAttribute="leading" secondItem="EpX-KL-3qD" secondAttribute="trailing" constant="8" id="6v3-mL-kbX"/>
+                                        <constraint firstItem="EpX-KL-3qD" firstAttribute="centerY" secondItem="Yba-vd-yE5" secondAttribute="centerY" id="bNT-7A-oTL"/>
+                                        <constraint firstItem="EpX-KL-3qD" firstAttribute="leading" secondItem="Yba-vd-yE5" secondAttribute="leading" constant="16" id="itm-aJ-esU"/>
+                                        <constraint firstAttribute="trailing" secondItem="gGj-23-0id" secondAttribute="trailing" constant="16" id="lei-wy-zD7"/>
+                                    </constraints>
+                                </view>
+                                <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="K95-Ip-q88"/>
+                                </constraints>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bI3-p1-tre" firstAttribute="leading" secondItem="3D4-P2-sbt" secondAttribute="leading" id="5oF-Za-3zd"/>
+                            <constraint firstItem="bI3-p1-tre" firstAttribute="trailing" secondItem="3D4-P2-sbt" secondAttribute="trailing" id="6YM-vx-7im"/>
+                            <constraint firstItem="HZr-rV-8Jn" firstAttribute="trailing" secondItem="fTt-el-JlZ" secondAttribute="trailing" id="RdB-B9-O77"/>
+                            <constraint firstItem="bI3-p1-tre" firstAttribute="top" secondItem="fTt-el-JlZ" secondAttribute="top" id="Ssi-Xe-sq0"/>
+                            <constraint firstItem="HZr-rV-8Jn" firstAttribute="leading" secondItem="fTt-el-JlZ" secondAttribute="leading" id="dcZ-MA-bs0"/>
+                            <constraint firstItem="HZr-rV-8Jn" firstAttribute="bottom" secondItem="bI3-p1-tre" secondAttribute="bottom" id="fg6-JB-OkA"/>
+                            <constraint firstItem="bI3-p1-tre" firstAttribute="height" secondItem="3D4-P2-sbt" secondAttribute="height" multiplier="0.4" id="jve-ho-tLm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fTt-el-JlZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="countryAndStateLabel" destination="gGj-23-0id" id="wvo-v7-kvq"/>
+                        <outlet property="mapView" destination="bI3-p1-tre" id="DjH-ef-pcc"/>
+                        <outlet property="nameLabel" destination="EpX-KL-3qD" id="ael-SO-Owv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IWT-a5-OSS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="234.40000000000001" y="834.97536945812806"/>
+        </scene>
+    </scenes>
+</document>

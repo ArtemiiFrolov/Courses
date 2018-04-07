@@ -7,7 +7,7 @@
 //
 
 import UIKit
-// MARK: -ViewController: UIViewController
+// MARK: - ViewController: UIViewController
 class ViewController: UIViewController {
     
     // MARK: IBOutlets
@@ -15,26 +15,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var beerCounterText: UILabel!
     
     //MARK: Stored Properties
-    var beerCounter: Int? {
-        if let beerCounterString = beerCounterText.text,
-            let beerCounter = Int(beerCounterString) {
-            return beerCounter
-        }
-        return nil
-    }
+    var beerCounter: Int = 0
     
-    // MARK: viewDidLoad
+    // MARK: overwritten functions
     override func viewDidLoad() {
         super.viewDidLoad()
         beerCounterField.delegate = self
     }
-    
-    // MARK: resetViewController
-    private func resetViewController() {
-        beerCounterField.text = ""
-    }
-    
-    // MARK: didReceiveMemoryWarning
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -42,16 +30,16 @@ class ViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>,
                                with event: UIEvent?) {
-        self.view.endEditing(true)
+        view.endEditing(true)
     }
     
-    // MARK: saveBeer
+    // MARK: IBActions
     @IBAction func saveBeer() {
         if let beerCountString = beerCounterField.text,
-            let beerCount = Int(beerCountString),
-            let beerCounter = beerCounter {
+            let beerCount = Int(beerCountString) {
             if beerCount > 0 {
-                beerCounterText.text = String(beerCount + beerCounter)
+                beerCounter = beerCount + beerCounter
+                beerCounterText.text = String(beerCounter)
                 showedAlert(amount: beerCount, flagPositive: true)
             }
             else {
@@ -62,13 +50,17 @@ class ViewController: UIViewController {
     }
     
     // MARK: private functions
+    private func resetViewController() {
+        beerCounterField.text = ""
+    }
+    
     private func showedAlert(amount: Int, flagPositive: Bool) {
         var alertController = UIAlertController(title: "Prost!", message: "You drink \(amount) of beer", preferredStyle: UIAlertControllerStyle.alert)
         if !flagPositive {
            alertController = UIAlertController(title: "WTF", message: "You can't drink \(amount) of beer", preferredStyle: UIAlertControllerStyle.alert)
     }
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
 }
 

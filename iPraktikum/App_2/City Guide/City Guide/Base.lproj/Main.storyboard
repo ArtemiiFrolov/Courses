@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2xl-zS-ZTX">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add City-->
+        <scene sceneID="5Z9-Yp-KFm">
+            <objects>
+                <viewController title="Add City" id="cIA-rh-nwC" customClass="AddCityViewController" customModule="City_Guide" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fUO-Ni-pFt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Wf4-zZ-nNQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add City" id="fyY-ow-zjC">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="CEF-rj-itm">
+                            <connections>
+                                <segue destination="3EQ-Mm-7tD" kind="unwind" identifier="addCityUnwindSegue" unwindAction="prepareForUnwindSegue:" id="Tj3-Sj-W4b"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="TGa-tg-gwy">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="cIA-rh-nwC" id="QvC-sy-tkB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sgQ-5k-Usk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="3EQ-Mm-7tD" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1776.8" y="131.78410794602701"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YTF-O0-ZpQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2xl-zS-ZTX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="jzO-ua-rqj">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="meO-Lh-yWP" kind="relationship" relationship="rootViewController" id="2E3-Yr-yWm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rDh-gZ-Yn9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-514" y="133"/>
+        </scene>
+        <!--Cities-->
+        <scene sceneID="5gB-Gt-f5e">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="meO-Lh-yWP" customClass="CitiesViewController" customModule="City_Guide" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Cities" id="Ubm-ub-E6b">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0jM-8T-Rx4">
+                            <connections>
+                                <segue destination="ElV-eK-KGO" kind="presentation" id="QK2-ta-QUr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HnV-xD-Lf7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="237" y="132"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pMe-Mz-5zf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ElV-eK-KGO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="9LW-07-pp6">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cIA-rh-nwC" kind="relationship" relationship="rootViewController" id="qPY-z8-2Z7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n4h-VA-2j5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1009" y="132"/>
+        </scene>
+        <!--cityViewController-->
+        <scene sceneID="Jtx-H2-KeT">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="cityViewController" storyboardName="CityView" referencedIdentifier="cityViewController" id="ldj-9x-1RZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F1Z-CP-WQf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="236" y="457"/>
+        </scene>
+    </scenes>
+</document>
