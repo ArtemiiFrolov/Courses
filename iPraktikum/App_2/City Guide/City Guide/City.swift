@@ -15,10 +15,14 @@ struct Coordinates: Codable {
 
 enum Country: String, Codable {
     case Germany
+    case Russia
 }
 
 enum State: String, Codable {
     case Bayern
+    case Berlin
+    case Kuybishev
+    case Syberia
 }
 
 struct Location: Codable {
@@ -32,9 +36,9 @@ struct City: Codable {
     let name: String
     let description: String
     let population: Int
-    let area: Float
-    // Task 1: Each City should have a location associated with it that not only stores a coordinate, but also the country and state the City is located in. Location and Coordinate should be structures, Country and State should be enumerations.
+    let area: Double
     let location: Location
+    // Task 1: Each City should have a location associated with it that not only stores a coordinate, but also the country and state the City is located in. Location and Coordinate should be structures, Country and State should be enumerations.
 }
 
 extension City: Equatable {

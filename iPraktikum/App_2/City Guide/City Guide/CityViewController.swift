@@ -16,6 +16,11 @@ class CityViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     // Add more @IBOutlets here
     
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    @IBOutlet weak var populationLabel: UILabel!
+    
+    @IBOutlet weak var areaLabel: UILabel!
     // The city that is displayed in the CityViewController
     // More on implicelty unwrapped optionals in Swift 3 🙂
     var city: City!
@@ -23,7 +28,12 @@ class CityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Configure all the outlets here ...
+        nameLabel.text = city.name
+        countryAndStateLabel.text = city.location.state.rawValue + ", " + city.location.country.rawValue
+        populationLabel.text = String(city.population)
+        areaLabel.text = String(city.area)
+        
+        mapView.centerOn(latitude: city.location.coordinates.coordinateX, longitude: city.location.coordinates.coordinateY, withAnAreaOf: city.area)
         
         
     
