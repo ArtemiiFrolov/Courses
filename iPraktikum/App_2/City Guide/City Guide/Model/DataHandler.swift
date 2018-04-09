@@ -7,8 +7,9 @@
 //
 
 import Foundation
-
+// MARK: - DataHandler
 class DataHandler {
+    // MARK: Constants
     private struct Constants {
         static let fileName = "Cities.json"
         static var localStorageURL: URL {
@@ -16,11 +17,9 @@ class DataHandler {
             return DocumentsDirectory.appendingPathComponent(Constants.fileName)
         }
     }
-    
-    // Task 3: A class called DataHandler should be used to store multiple cities to and read and write them to JSON.
-    
     static var cities: [City] = []
     
+    // MARK: Functions
     static func loadFromJSON() {
         do {
             let fileWrapper = try FileWrapper(url: Constants.localStorageURL, options: .immediate)
