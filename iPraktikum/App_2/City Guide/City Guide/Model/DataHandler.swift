@@ -17,9 +17,11 @@ class DataHandler {
             return DocumentsDirectory.appendingPathComponent(Constants.fileName)
         }
     }
+    
+    // MARK: Stored property
     static var cities: [City] = []
     
-    // MARK: Functions
+    // MARK: Type functions
     static func loadFromJSON() {
         do {
             let fileWrapper = try FileWrapper(url: Constants.localStorageURL, options: .immediate)

@@ -19,7 +19,7 @@
 		65E30EC21F8A3292009944E8 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E30EC11F8A3292009944E8 /* CityViewController.swift */; };
 		65E5CFA71F8B3BF700ECEB2E /* CityView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E5CFA51F8B3BF700ECEB2E /* CityView.storyboard */; };
 		8115A513207B53790040B809 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8115A512207B53790040B809 /* UITextFieldExtension.swift */; };
-		8115A515207B62760040B809 /* checkBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8115A514207B62760040B809 /* checkBool.swift */; };
+		8115A515207B62760040B809 /* CheckBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8115A514207B62760040B809 /* CheckBool.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +37,7 @@
 		65E30EC11F8A3292009944E8 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		65E5CFA61F8B3BF700ECEB2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "City Guide/Base.lproj/CityView.storyboard"; sourceTree = "<group>"; };
 		8115A512207B53790040B809 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
-		8115A514207B62760040B809 /* checkBool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkBool.swift; sourceTree = "<group>"; };
+		8115A514207B62760040B809 /* CheckBool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBool.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,7 @@
 			children = (
 				65708B481F8A7AE500C2F5A1 /* DataHandler.swift */,
 				65B792EA1F8A621000D97102 /* MKMapViewExtension.swift */,
-				8115A514207B62760040B809 /* checkBool.swift */,
+				8115A514207B62760040B809 /* CheckBool.swift */,
 				65708B461F8A7ACA00C2F5A1 /* City.swift */,
 			);
 			path = Model;
@@ -214,7 +214,7 @@
 				8115A513207B53790040B809 /* UITextFieldExtension.swift in Sources */,
 				65708B491F8A7AE500C2F5A1 /* DataHandler.swift in Sources */,
 				65E30EAA1F8A3112009944E8 /* CitiesViewController.swift in Sources */,
-				8115A515207B62760040B809 /* checkBool.swift in Sources */,
+				8115A515207B62760040B809 /* CheckBool.swift in Sources */,
 				65708B471F8A7ACA00C2F5A1 /* City.swift in Sources */,
 				65E30EC21F8A3292009944E8 /* CityViewController.swift in Sources */,
 				65E30EBE1F8A319C009944E8 /* AddCityViewController.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import Foundation
 // MARK: - checkBool
-class checkBool {
+class CheckBool {
     var boolYText: Bool = false
     var boolXText: Bool = false
     var boolStateText: Bool = false

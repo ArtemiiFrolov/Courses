@@ -241,6 +241,7 @@
                         <outlet property="descriptionText" destination="blb-Df-wgL" id="8yc-we-ko3"/>
                         <outlet property="nameText" destination="3Jf-d3-xee" id="Oj9-y1-NHn"/>
                         <outlet property="populationText" destination="6OS-uR-klZ" id="1U3-RH-MTQ"/>
+                        <outlet property="scrollView" destination="TgD-mB-KpP" id="ml6-4J-IC3"/>
                         <outlet property="stateText" destination="QtO-lj-fny" id="HZX-Nr-Yf8"/>
                         <outlet property="xText" destination="lal-hc-og0" id="zTf-qx-1rt"/>
                         <outlet property="yText" destination="npo-cb-hDF" id="T9k-9y-C1r"/>
